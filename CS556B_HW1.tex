@@ -126,11 +126,24 @@ Note: All solutions methods must be fully explained. If a problem requires you t
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
 
+    Answer: $B + C = \begin{bmatrix} 2 & -3 \\ 1 & 8 \end{bmatrix} + \begin{bmatrix} 3 & 7 \\ -4 & 8 \end{bmatrix} = \begin{bmatrix} 2 + 3 & -3 + 7 \\ 1 + (-4) & 8 + 8\end{bmatrix} = \begin{bmatrix} 5 & 4 \\ -3 & 16\end{bmatrix}$ \\
+    $A(B+C) = \begin{bmatrix} -1 & 5 \\ -7 & 3 \end{bmatrix} * \begin{bmatrix} 5 & 4 \\ -3 & 16 \end{bmatrix} = \begin{bmatrix} -1 * 5 + 5 * -3 & -1 * 4 + 5 * 16 \\ -7 * 5 + 3 * -3 & -7 * 4 + 3 * 16 \end{bmatrix} = \begin{bmatrix} -20 & 76 \\ -44 & 20 \end{bmatrix}$ \\
+    $AB + AC = \begin{bmatrix}  -1 & 5 \\ -7 & 3\end{bmatrix} * \begin{bmatrix}  2 & -3 \\ 1 & 8\end{bmatrix} + \begin{bmatrix}  -1 & 5 \\ -7 & 3\end{bmatrix} * \begin{bmatrix}  3 & 7 \\ -4 & 8\end{bmatrix} = \begin{bmatrix} 3 & 43 \\ -11 & 45 \end{bmatrix} + \begin{bmatrix} -23 & 33 \\ -33 & -25 \end{bmatrix}$ \\
+    $= \begin{bmatrix} -20 & 76 \\ -44 & 20 \end{bmatrix} = A(B+C)$
+
+
 
    \item (10 points) Calculate the inverse of matrix $A =  \begin{bmatrix}  1 & -3 & 3 \\ 8 & 5 & -2 \\ -4 & 7 & 2\end{bmatrix}$. Note: It is acceptable to leave the final solution with fractional entities in the matrix (i.e., no requirement to convert fractions to decimal numbers).\vspace{2ex}
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
-   
+
+    Answer: 1) Minors = $\begin{bmatrix} 24 & 8 & 76 \\ 8 & 5 & -2 \\ -4 & 7 & 2 \end{bmatrix}$ \\
+    2) Cofactors = 1) * $\begin{bmatrix} 1 & -1 & 1 \\ -1 & 1 & -1 \\ 1 & -1 & 1 \end{bmatrix} = \begin{bmatrix} 24 & -8 & 76 \\ 27 & 14 & 5 \\ -9 & 26 & 29 \end{bmatrix}$ \\
+    3) Transpose of 2) = $\begin{bmatrix} 24 & 27 & -9 \\ -8 & 14 & 26 \\ 76 & 5 & 29 \end{bmatrix}$ \\
+    4) Inverse = $3) * \frac{1}{det(A)}$ \\
+    det(A) = 1 * (10 + 14) + 3 * (16 - 8) + 3 * 76 = 276 \\
+    $A^{-1} = \frac{1}{276} * \begin{bmatrix} 24 & 27 & -9 \\ -8 & 14 & 26 \\ 76 & 5 & 29 \end{bmatrix}$
+    
 \end{enumerate}
 
 \section*{Change of Bases}
