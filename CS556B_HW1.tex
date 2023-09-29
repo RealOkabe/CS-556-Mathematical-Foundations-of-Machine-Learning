@@ -232,10 +232,21 @@ Note: All solutions methods must be fully explained. If a problem requires you t
 
          %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
 
+         Answer: The dimensions of the 4 fundamental subspaces are: \\
+         1. Row Space = $r = 3$ \\
+         2. Column Space = $r = 3$ \\
+         3. Null Space = $n - r = 5 - 3 = 2$ \\
+         4. Left Null Space = $m - r = 9 - 3 = 6$ \\
+         The sum of all 4 dimensions is $3 + 3 + 2 + 6 = 14$
+
         
         \item (5 points) If a $4 \times 5$ matrix has rank 4, what are the dimensions of its columnspace (e.g., which of $\mathbb{R}^{1}$,$\mathbb{R}^{2}$,...$\mathbb{R}^{n}$ represents the column space) and left nullspace (i.e., for a matrix $A_{m\times n}$, the left null space is the set of all vectors $\mathbf{x}$ such that $A^T\mathbf{x} = 0$)?
 
         %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
+
+        Answer: The dimensions of: \\
+        1. Column space = $r = 4$ \\
+        2. Left Null space = $m - r = 5 - 4 = 1$
 
     
     \item (10 points) Find the set of vectors that form the null space of the matrix\hspace{0.4ex}
@@ -246,6 +257,19 @@ Note: All solutions methods must be fully explained. If a problem requires you t
     \end{bmatrix}$
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
+
+    Answer: Since the matrix is not a square matrix, it is either an underdetermined system or an overdetermined one. The latter seems to be true because the rows and columns do not appear to be linearly dependent. 
+    Let's try to find the reduced row echelon form first: \\
+
+    $A = \begin{bmatrix} 3 & 3 & 3 & 3 \\ 5 & 4 & 3 & 2 \\ 3 & 3 & 4 & 1 \end{bmatrix}$ \\
+    doing operation $R_1 = R_1 * 1/3, A = \begin{bmatrix} 1 & 1 & 1 & 1 \\ 5 & 4 & 3 & 2 \\ 3 & 3 & 4 & 1 \end{bmatrix}$ \\
+    now, going through operations: $R_3 = R_3 - 3R_1, \ R_2 = R_2 - 5R_1, \ R_2 = -R_2, \ R_2 = R_2 - 2R_3, \ R_1 = R_1 - R_3, \ R_1 = R_1 - R_2, \ $ we get the matrix $A = \begin{bmatrix} 1 & 0 & 0 & -4 \\ 0 & 1 & 0 & 7 \\ 0 & 0 & 1 & -2 \end{bmatrix}$ \\
+    we can add a 4th row of zeros to make this into a square matrix such that: $A = \begin{bmatrix} 1 & 0 & 0 & -4 \\ 0 & 1 & 0 & 7 \\ 0 & 0 & 1 & -2 \\ 0 & 0 & 0 & 0 \end{bmatrix} . \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix} = 0 $ \\
+    Since the last row is zero, d is a free variable. Now, computing equations: \\
+    $a - 4d = 0, \ b + 7d = 0, \ c - 2d = 0 \implies a = 4d, \ b = -7d \ c = 2d$ \\
+    So, if $d = 1$ then $a = 4, \ b = -7, \ c = 2$, so, the set of vectors that form the null space will be $c * \begin{bmatrix} 4 \\ -7 \\ 2 \\ 1 \end{bmatrix}$ where c is any constant.
+    
+    
 
     
     \item (10 points) Find the \emph{complete} set of solutions for the system of linear equations (Ax=b) defined below:
@@ -259,6 +283,16 @@ Note: All solutions methods must be fully explained. If a problem requires you t
     Note: First find the solution(s) that satisfy the \emph{column space} relationship, then find the set of solutions to the null space and add the two to obtain the final solution.
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
+
+    Answer: Let's try to reduce the matrix $ A = \begin{bmatrix} 1 & -2 & -2 \\ 2 & -5 &  -4 \\ 4 & -9 & -8 \end{bmatrix} $ into Reduced Row Echelon form: \\
+    $R_2 = R_2 - 2R_1 \ and \ R_3 = R_3 - 4R_1 \implies A = \begin{bmatrix} 1 & -2 & -2 \\ 0 & -1 & 0 \\ 0 & -1 & 0 \end{bmatrix}$ now doing $ R_3 = R_3 + R_2 \implies A = \begin{bmatrix} 1 & -2 & -2 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{bmatrix} $ \\
+    Now, after following operations $ R_1 = R_1 + R_2 \ and R_2 = -R_2 $ we reach $A = \begin{bmatrix} 1 & 0 & -2 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$ \\
+    $ \begin{bmatrix} 1 & 0 & -2 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix} . \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}$ \\
+    Since the third row is 0, that means $x_3$ is a free variable. Now, the equations will be: $x_1 - 2x_3 = 0, \ x_2 = b_2 \implies x_1 = b_1 + 2x_3 $ \\
+    Since $ x_3 $ is a free variable, let's set it equal to 1. Then, $x_1 = b_1 + 2$. Plugging the values of $x_1, x_2 and x_3$ into the original equations, we get $x_1 = 2, x_2 = 0 \ and \ x_3 = 1$ , so, the solution will be $ c * \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix} $ \\
+    Similarly, to find the solution to the null space, we set the RHS matrix to 0. Now the equations become: $x_1 -2x_3 = 0, \ x_2 = 0$, so, since $x_3$ remains the free variable, the null space is also $ c * \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix}$ \\
+    Since the null space and the column space have the same solution, the complete solution will be $ c * \begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix} $
+
 
     \item (10 points) Calculate the Projection of \emph{$\mathbf{b}$} onto the column space defined by matrix A.  In each case, also calculate the magnitude of the vector from $\mathbf{b}$ perpendicular to the projection.
     \begin{enumerate}
@@ -286,6 +320,16 @@ Note: All solutions methods must be fully explained. If a problem requires you t
     \end{enumerate}
 
     %%%%%%%%% Answers Here %%%%%%%%%%%%%%%
+
+    Answer: a) Projection of vector b on columnspace of A P = $A(A^TA)^{-1}A^Tb$ \\
+    $A^TA = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \end{bmatrix} . \begin{bmatrix} 1 & 1 \\ 0 & 1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & 2 \end{bmatrix} $ \\
+    $(A^TA)^{-1} = \begin{bmatrix} 2 & -1 \\ -1 & 1 \end{bmatrix}, \ A^Tb = \begin{bmatrix} 2 & 7 \end{bmatrix} \implies (A^TA)^{-1}.A^Tb = \begin{bmatrix} -3 \\ 5 \end{bmatrix} $ \\
+    $P = \begin{bmatrix} 1 & 1 \\ 0 & 1 \\ 0 & 0 \end{bmatrix} . \begin{bmatrix} -3 \\ 5 \end{bmatrix} = \begin{bmatrix} 2 \\ 5 \\ 0 \end{bmatrix} $ \\
+    $ b - P = \begin{bmatrix} 2 \\ 5 \\ 7 \end{bmatrix} - \begin{bmatrix} 2 \\ 5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 7 \end{bmatrix} \implies ||b - P|| = \sqrt{7^2} = 7$ \\ \\
+    b) $A^TA = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 1 & 1 \end{bmatrix} . \begin{bmatrix} 1 & 1 \\ 1 & 1 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 2 & 2 \\ 2 & 3 \end{bmatrix} $ \\
+    $ (A^TA)^{-1} = \begin{bmatrix} 3/2 & -1 \\ -1 & 1 \end{bmatrix}, \ A^Tb = \begin{bmatrix} 6 \\ 13 \end{bmatrix} \implies (A^TA)^{-1}.A^Tb = \begin{bmatrix} -4 \\ 7 \end{bmatrix} $ \\
+    $P = \begin{bmatrix} 1 & 1 \\ 1 & 1 \\ 0 & 1 \end{bmatrix} . \begin{bmatrix} -4 \\ 7 \end{bmatrix} = \begin{bmatrix} 3 \\ 3 \\ 7 \end{bmatrix}$ \\
+    $b - P = \begin{bmatrix} 3 \\ 3 \\ 7 \end{bmatrix} - \begin{bmatrix} 3 \\ 3 \\ 7 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} \implies ||b - P|| = 0 $
 
 
     \item (10 points) Suppose matrix M is defined as follows:
