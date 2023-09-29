@@ -110,10 +110,21 @@ Note: All solutions methods must be fully explained. If a problem requires you t
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
 
+    Answer: From the surface, it looks like the vectors are linearly independent because it doesn't look like we can just multiply one of them by a scalar to reach another. But, let's try reducing the matrix containing the three vectors into Reduced Row Echelon Form: \\
+    R3 = R3 - 3R1 = $\begin{bmatrix} 1 & 1 & 1 \\ 4 & 3 & -1 \\ 0 & 2 & 0 \end{bmatrix} $ \\
+    Now if we go through steps: R2 = R2 - 4R1, R2 = -R2, R1 = R1 - R2, R3 = R3 - 2R2, R3 = -1/10 * R3, R1 = R1 + 4R3 then R2 = R2 - 5R3, we will reach the Reduced Row Echelon Form without having two rows either become equal or one of the rows becoming 0. Which means, that, only when a = b = c = 0 will the equation formed by those vectors be 0.
+    That means that the 3 given vectors are linearly independent.
+
     
     \item (10 points) Given a subset of vectors $S = \{\mathbf{x}_1,\mathbf{x}_2,..,\mathbf{x}_k\}$ for $k \in \mathbb{N}$ of a vector space $V$, prove that $S$ is linearly independent iff a linear combination of elements of $S$ with non-zero coefficients does not yield \textbf{0}. \textbf{Hint}: To prove \textit{iff} statements, i.e., A \textbf{iff} B (A $\iff$ B), first prove A $\rightarrow$ B, then prove B $\leftarrow$ A.
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
+
+    Answer: If S is linearly independent, then the linear combination: $\mathbf{ a_1x_1 + a_2x_2 + .... + a_kx_k = 0 }$ has only one possible solution and that is $\mathbf{ a_1 = a_2 = a_3 = .... = a_k = 0 }$ because S is linearly independent. Therefore, a linear combination of vectors in S with non zero coefficients cannot yield the 0 vector. This means that there is no non-trivial linear combination of vectors within S that equals the zero vector. Thus A $ \rightarrow $  B \\ \\
+    Now let's try it the other way, let's say that there is an $a_1 \neq 0$, this means that vector \\ $x_1 = \frac{a_2}{a_1}.x_2 - \frac{a_3}{a_1}.x_3 - .... - \frac{a_k}{a_1}.x_k$ which means that all vectors in S are not linearly independent, which is \\ \\ contradictory. Thus, if $a_1 = a_2 = a_3 = .... = a_k = 0$ then vectors in the given span S are linearly independent. Therefore $B \rightarrow A$ \\
+    Since $ A \rightarrow B \ and \ B \rightarrow A \implies A \iff B $
+
+
 
 \end{enumerate}
 
