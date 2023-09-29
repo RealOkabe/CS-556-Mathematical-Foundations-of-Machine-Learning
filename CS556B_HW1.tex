@@ -276,6 +276,20 @@ Note: All solutions methods must be fully explained. If a problem requires you t
 
     %%%%%%%%% Answer Here %%%%%%%%%%%%%%%
 
+    Answer: Finding A, B and C: \\
+    $\mathbf{A = a = \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}}$ \\
+    $\mathbf{ B = b - \frac{A^T.b}{A^T.A}.A = \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix} - \frac{\begin{bmatrix} 1 & 2 & 0 \end{bmatrix} . \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix}}{\begin{bmatrix} 1 & 2 & 0 \end{bmatrix} . \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}} . \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} }$ \\
+    $\mathbf{B = \begin{bmatrix} -6/5 \\ 3/5 \\ -1  \end{bmatrix}}$ \\
+    $\mathbf{ C = c - \frac{A^T.c}{A^T.A}.c - \frac{B^T.c}{B^T.B}.c = \begin{bmatrix} 4 \\ 4 \\ 2 \end{bmatrix} - \frac{\begin{bmatrix} 1 & 2 & 0 \end{bmatrix} . \begin{bmatrix} 4 \\ 4 \\ 2 \end{bmatrix}}{\begin{bmatrix} 1 & 2 & 0 \end{bmatrix} . \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}} . \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}
+     - \frac{\begin{bmatrix} 0 & 3 & -1 \end{bmatrix} . \begin{bmatrix} 4 \\ 4 \\ 2 \end{bmatrix}}{\begin{bmatrix} 0 & 3 & -1 \end{bmatrix} . \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix}} . \begin{bmatrix} 0 \\ 3 \\ -1 \end{bmatrix} 
+    }$ \\
+    $\mathbf{= \begin{bmatrix} 4 \\ 4 \\ 2 \end{bmatrix} - \begin{bmatrix} 12/5 \\ 24/5 \\ 0 \end{bmatrix} - \begin{bmatrix} 66/35 \\ -33/35 \\ 11/7 \end{bmatrix} = \begin{bmatrix} -2/7 \\ 1/7 \\ 3/7 \end{bmatrix} }$ \\ \\
+    Orthonormal vectors = \\
+    $\mathbf{q1 = \frac{A}{||A||} = \frac{\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}}{\sqrt{1^2 + 2^2}} = \begin{bmatrix} 1/\sqrt{5} \\ 2/\sqrt{5} \\ 0 \end{bmatrix} }$ \\
+    $\mathbf{q2 = \frac{B}{||B||} = \frac{\begin{bmatrix} -6/5 \\ 3/5 \\ -1 \end{bmatrix}}{\sqrt{(-6/5)^2 + (3/5)^2 + (-1)^2}} = \begin{bmatrix} -6/\sqrt{70} \\ 3/\sqrt{70} \\ 5/\sqrt{70} \end{bmatrix} }$ \\
+    $\mathbf{q3 = \frac{C}{||C||} = \frac{\begin{bmatrix} -2/7 \\ 1/7 \\ 3/7 \end{bmatrix}}{\sqrt{(-2/7)^2 + (1/7)^2 + (3/7)^2}} = \begin{bmatrix} -2/\sqrt{14} \\ 1/\sqrt{14} \\ 3/\sqrt{14}  \end{bmatrix} }$ \\
+    $\mathbf{Orthonormal \ Basis = \begin{bmatrix} 1/\sqrt{5} & -6/\sqrt{70} & -2/\sqrt{14} \\ 2/\sqrt{5} & 3/\sqrt{70} & 1/\sqrt{14} \\ 0 & 5/\sqrt{70} & 3/\sqrt{14} \end{bmatrix}} $
+
     
 \end{enumerate}
 
