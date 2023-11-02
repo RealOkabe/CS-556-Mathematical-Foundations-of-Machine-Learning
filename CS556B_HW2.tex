@@ -67,7 +67,20 @@ Note: All solutions methods must be fully explained. If a problem requires you t
         1 \ \ \ & 2\\
         4 \ \ \ & 3
     \end{bmatrix}$
-    Please arrange the eigenvalues in descending order while constructing the diagonal matrix.
+    Please arrange the eigenvalues in descending order while constructing the diagonal matrix. \\
+
+    Answer: Using the equation $det (A - \lambda I) = 0$ \\
+    $\mathbf{ det(\begin{bmatrix}
+        1 - \lambda & 2 \\
+        4 & 3 - \lambda
+    \end{bmatrix}) } = 0 \implies (1 - \lambda)(3 - \lambda) - 2 * 4 = 0$ \\
+    $\mathbf{ 3 - \lambda - 3 \lambda + \lambda^2 - 8 = 0 \implies \lambda^2 -4 \lambda - 5 = 0 \implies (\lambda + 1)(\lambda - 5) = 0 \implies \lambda = 5, -1}$ \\
+    $\mathbf{ \Lambda = \begin{bmatrix} 5 & 0 \\ 0 & -1 \end{bmatrix} }$ \\
+    $\mathbf{ For \ \lambda = 5, \begin{bmatrix} 1 - 5 & 2 \\ 4 & 3 - 5 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0 \implies v_1 = 1 \ and \ v_2 = -2 }$ \\
+    $\mathbf{ For \ \lambda = -1, \begin{bmatrix} 1 + 1 & 2 \\ 4 & 3 + 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0 \implies v_1 = -1 \ and \ v_2 = 1 }$ \\
+    $\mathbf{ \implies \bigvee = \begin{bmatrix} 1 & -1 \\ -2 & 1 \end{bmatrix} \implies \bigvee^{-1} = \begin{bmatrix} -1 & -1 \\ -2 & -1 \end{bmatrix}}$ \\
+    $\mathbf{ A = \bigvee \bigwedge \bigvee^{-1} = \begin{bmatrix} 1 & -1 \\ -2 & 1 \end{bmatrix} \begin{bmatrix} 5 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} -1 & -1 \\ -2 & -1 \end{bmatrix} }$ \\
+    $\mathbf{ \begin{bmatrix} 5 & 1 \\ -10 & -1 \end{bmatrix} \begin{bmatrix} -1 & -1 \\ -2 & -1 \end{bmatrix} = \begin{bmatrix} -7 & -6 \\ 12 & 11 \end{bmatrix} }$
     
     \item (5 points) Calculate the Singular Value Decomposition of matrix
     $A = \begin{bmatrix}
@@ -75,7 +88,19 @@ Note: All solutions methods must be fully explained. If a problem requires you t
         3 & 2
     \end{bmatrix}$.
     
-    Demonstrate each step in the computation and order the singular values in descending order in the $\Sigma$ matrix.
+    Demonstrate each step in the computation and order the singular values in descending order in the $\Sigma$ matrix. \\
+    
+    Answer:   $\mathbf{ A^T A = \begin{bmatrix} 2 & 3 \\ 3 & 2 \end{bmatrix} \begin{bmatrix} 2 & 3 \\ 3 & 2 \end{bmatrix} = \begin{bmatrix} 13 & 12 \\ 12 & 13 \end{bmatrix} }$ \\
+    $\mathbf{ det(A - \lambda I) =  0 \implies det( \begin{bmatrix} 13 - \lambda & 12 \\ 12 & 13 - \lambda \end{bmatrix} ) = 0 \implies (13 - \lambda)^2 - 144 = 0} $ \\
+    $\mathbf{ (13 - \lambda)^2 = 144 \implies (13 - \lambda) = \pm \sqrt{144} \implies \lambda = 25, 1 }$ \\
+    $\mathbf{ \Sigma^2 = \begin{bmatrix} 25 & 0 \\ 0 & 1 \end{bmatrix} \implies \Sigma = \begin{bmatrix} 5 & 0 \\ 0 & 1 \end{bmatrix} }$ \\
+    $\mathbf{ For \ \lambda = 25, \begin{bmatrix} 13 - 25 & 12 \\ 12 & 13 - 25 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0 \implies v_1 = 1 \ and \ v_2 = 1 }$ \\
+    $\mathbf{ For \ \lambda = 1, \begin{bmatrix} 13 - 1 & 12 \\ 12 & 13 - 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0 \implies v_1 = 1 \ and \ v_2 = -1 }$ \\
+    $\mathbf{ \bigvee = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \bigvee }$ is not orthogonal, so dividing it by the magnitude of its vectors. \\
+    $\mathbf{ \bigvee = \begin{bmatrix} 1/\sqrt2 & 1/\sqrt2 \\ 1/\sqrt2 & -1/\sqrt2 \end{bmatrix}, \ \bigvee^T = \begin{bmatrix} 1/\sqrt2 & 1/\sqrt2 \\ 1/\sqrt2 & -1/\sqrt2 \end{bmatrix} }$ \\
+    $\mathbf{ \Sigma^{-1} = \begin{bmatrix} 1/5 & 0 \\ 0 & 1 \end{bmatrix}}$ \\
+    $\mathbf{ U = A \bigvee \Sigma^{-1} =  \begin{bmatrix} 2 & 3 \\ 3 & 2 \end{bmatrix} \begin{bmatrix} 1/\sqrt2 & 1/\sqrt2 \\ 1/\sqrt2 & -1/\sqrt2 \end{bmatrix} \begin{bmatrix} 1/5 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1/\sqrt2 & -1/\sqrt2 \\ 1/\sqrt2 & 1/\sqrt2 \end{bmatrix} }$
+
     
     \item (8 points) Recommendation System (SVD)
     
