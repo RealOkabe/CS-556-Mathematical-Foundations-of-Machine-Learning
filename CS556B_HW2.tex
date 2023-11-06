@@ -174,11 +174,22 @@ Note: All solutions methods must be fully explained. If a problem requires you t
     $\mathbf{ E[X]^2 = 153.84^2 = 23666.74 }$ \\
     $\mathbf{ \sigma ^2 = E[X^2] - (E[X])^2 = 49230.77 - 23666.74 = 25564.03 \implies \sigma = \sqrt{25564.03} = 159.89 }$ \\
     $\mathbf{ \sigma ^2 = \ Variance \ \sigma = \ Standard \ Deviation }$
-    
+
     \item (10 points) Harry is 24 years old and plans to get his driver's license. The written knowledge test Harry has to give before the driving test is multiple choice where every question has \emph{y} options. There are no negative marks for wrong answers and hence Harry chooses to guess an answer if he doesn't know the correct answer to the question. Let $x$ be the probability that he knows the answer. The probability where Harry guesses at the answer and it will be correct is $\frac{1}{y}$. What is the probability that Harry knows the correct answer to a problem given that he has answered that problem correctly.
     (Assume that Harry does not leave any questions on the test unanswered. Also assume that for any question to which harry knows the answer, his answers will always be correct.) \textbf{Hint:} Employ Bayes rule.
+
+    Answer: Let p(k) be the probability of Harry knowing the answer = x. So, the probability of Harry guessing the answer, p(g) = 1 - x because Harry only guesses if he doesn't know the answer. \\
+    Now, the probability of Harry guessing and getting the answer right, $\mathbf{ p(g \cap c) = 1 / y}$ \\
+    So, p(k | c) = $\mathbf{ \frac{p(k \cap c)}{p(c)} = \frac{p(c | k) * p(k)}{p(c)} = \frac{1 * x}{p(c | k) * p(k) + p(c | g) * p(g)} = \frac{x}{1 * x + i/y * (1-x)} = \frac{xy}{xy + 1 - x} }$
+    
     \item (10 points) It is estimated that 40\% of emails are spam emails. Some software has been applied to filter these spam emails before they reach your inbox. A certain brand of software claims that it can detect 98\% of spam emails, and the probability for a false positive (a non-spam email detected as spam) is 5\%. Now if an email is detected as spam, then what is the probability that it is in fact a non-spam email?
- 
+    
+    Answer: Probability of an email being spam, p(s) = 0.4 \\ 
+    So, probability of an email not being spam, p(s') = 0.6 \\
+    Probability of the software giving a false positive, $\mathbf{ p(+ve \ | \ s') }$ = 0.05 \\
+    So, the probability of an email that was detected as spam, not being a spam is $\mathbf{ p(s' \ | \ +ve) = \frac{p(+ve | s') * p(s')}{p(+ve)} }$ \\
+    $\mathbf{ = \frac{0.05 * 0.6}{p(+ve|s) * p(s) + p(+ve|s') * p(s')} = \frac{0.03}{0.98 * 0.4 + 0.05 * 0.6} = \frac{0.03}{0.422} = 0.071 }$
+
     \item (10 points) A  certain  disease  affects  about 1 out  of 10,000  people.  There  is  a  test  to  check whether the person has the disease. The test is quite accurate. In particular, we know that
 
     \begin{itemize}
