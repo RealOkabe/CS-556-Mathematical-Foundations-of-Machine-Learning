@@ -153,11 +153,28 @@ Note: All solutions methods must be fully explained. If a problem requires you t
         \item (5 points) Let $q_3$ represent the minimum weight for the upper quartile (i.e., top 25\%) of weight of apples  liked by Jane. What is the probability that the weight of a randomly selected apple picked by Jane is greater than or equal to $q_3$. \textbf{Hint:} Consider the probability that Jane \emph{likes} an apple AND that the weight of the apple lies in the \emph{upper quartile} (i.e., weight $\geq q_3$)
     \end{enumerate}
 
+    Answer: a) Jane doesn't like apples that weigh less than or equal to 100g. So, $\mathbf{ Z(w \le 100) = \frac{100 - 180}{60} = -1.33 }$ \\
+    P(Jane not liking an apple she picked) = 0.0918 (From the z-table). So, Jane doesn't like 9.18 percent of apples that she picked. \\ \\
+    b) P(Jane likes an apple she picked) = 1 - P(Jane not liking an apple she picked) = 1 - 0.0918 = 0.908 \\
+    We have to find out the probability of an apple picked by Jane being in the upper quartile. \\
+    So, $\mathbf{ P(w \ge q_3) = 0.25 * P(Jane \ liking \ the \ apple \ she \ picked) = 0.25 * 0.908 = 0.227 }$
+
+
     \item (10 points) A bag contains five types of balls colored red, blue, green, yellow, orange. There are 9 each of red, blue, green and yellow balls and there are 3 orange balls. We draw a ball from the bag, if the ball drawn is colored green or yellow we get \$0 payoff. If it is blue the we get a \$200 payoff. If the ball drawn is red, we get a \$300 payoff and \$500 if it is orange.
     \begin{enumerate}
         \item (5 points) What is our expected payoff of this experiment? \textbf{Hint:} Calculate expected value.
         \item (5 points) What is the standard deviation and variance? \textbf{Hint:} $\sigma^2(X) = E[X^2] - (E[X])^2$
     \end{enumerate}
+
+    Answer: $\mathbf{ x_i = 300, 200, 0, 0, 500 }$ \ for balls, Red, Blue, Green, Yellow and Orange respectively. \\
+    $\mathbf{ p_i = 9/39, 9/39, 9/39, 9/39, 3/39 }$ \ respectively. \\
+    a) Expected payoff = E[X] = $\mathbf{ \Sigma x_i p_i = 300 * 9/39 + 200 * 9/39 + 0 * 9/39 + 0 * 9/39 + 500 * 3/39}$ \\
+    $\mathbf{ = 2000/13 = 153.84 }$ \ So, the expected payoff is \$153.84 \\ \\
+    b) $\mathbf{ E[X^2] = \Sigma x_i ^2 p_i = 90000 * 9/39 + 40000 * 9/39 + 250000 * 3/39 = 640000 / 13 = 49230.77 }$ \\
+    $\mathbf{ E[X]^2 = 153.84^2 = 23666.74 }$ \\
+    $\mathbf{ \sigma ^2 = E[X^2] - (E[X])^2 = 49230.77 - 23666.74 = 25564.03 \implies \sigma = \sqrt{25564.03} = 159.89 }$ \\
+    $\mathbf{ \sigma ^2 = \ Variance \ \sigma = \ Standard \ Deviation }$
+    
     \item (10 points) Harry is 24 years old and plans to get his driver's license. The written knowledge test Harry has to give before the driving test is multiple choice where every question has \emph{y} options. There are no negative marks for wrong answers and hence Harry chooses to guess an answer if he doesn't know the correct answer to the question. Let $x$ be the probability that he knows the answer. The probability where Harry guesses at the answer and it will be correct is $\frac{1}{y}$. What is the probability that Harry knows the correct answer to a problem given that he has answered that problem correctly.
     (Assume that Harry does not leave any questions on the test unanswered. Also assume that for any question to which harry knows the answer, his answers will always be correct.) \textbf{Hint:} Employ Bayes rule.
     \item (10 points) It is estimated that 40\% of emails are spam emails. Some software has been applied to filter these spam emails before they reach your inbox. A certain brand of software claims that it can detect 98\% of spam emails, and the probability for a false positive (a non-spam email detected as spam) is 5\%. Now if an email is detected as spam, then what is the probability that it is in fact a non-spam email?
