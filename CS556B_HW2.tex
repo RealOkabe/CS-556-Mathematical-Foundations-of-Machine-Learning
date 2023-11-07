@@ -223,6 +223,26 @@ Note: All solutions methods must be fully explained. If a problem requires you t
     Use the limit definition of a function to derive the quotient rule of the derivative of function $F(x)$.\vspace{2ex}
     \item (3 points) Consider a function $f(x) = \mathrm{sin(x)}$. Show using the limit definition that $f'(x)= cos(x)$.
 \end{enumerate}
+
+Answer: \begin{equation*}a) \ F(x) = \frac{f(x)}{g(x)} \implies F'(x) = \lim\limits_{h\xrightarrow[]{} 0}\frac{\frac{f(x + h)}{g(x + h)} - \frac{f(x)}{g(x)}}{h} = \lim\limits_{h\xrightarrow[]{} 0} \frac{\frac{f(x + h)g(x) - g(x + h)f(x)}{g(x + h)g(x)}}{h}
+    , \ Adding \ and \ subtracting \ f(x).g(x)
+\end{equation*} \\
+\begin{equation*} = \lim\limits_{h\xrightarrow[]{} 0} \frac{1}{h}.\frac{f(x + h)g(x) - g(x + h)f(x) + f(x)g(x) - f(x)g(x)}{g(x + h)g(x)} = \lim\limits_{h\xrightarrow[]{} 0} \frac{1}{h}.\frac{f(x + h)g(x) - f(x)g(x)}{g(x + h)g(x)} - \frac{g(x + h)f(x) - f(x)g(x)}{g(x + h)g(x)}
+\end{equation*} \\
+\begin{equation*} = \lim\limits_{h\xrightarrow[]{} 0} \frac{1}{h}.\frac{f(x + h) - f(x)}{g(x + h)} -  \frac{f(x)}{g(x + h)g(x)}.(g(x + h) - g(x)) = \frac{1}{g(x)}\lim\limits_{h\xrightarrow[]{} 0} \frac{f(x + h) - f(x)}{h} - \frac{f(x)}{g(x)^2} \lim\limits_{h\xrightarrow[]{} 0} \frac{g(x + h) - g(x)}{h}
+\end{equation*} \\
+\begin{equation*} = \frac{f'(x)}{g(x)} - \frac{f(x)g'(x)}{g(x)^2} = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}, \ hence \ proved.
+\end{equation*} \\
+\begin{equation*} b) f(x) = sin(x) \implies f'(x) = \lim\limits_{h\xrightarrow[]{} 0} \frac{sin(x + h) - sin(x)}{h} = \lim\limits_{h\xrightarrow[]{} 0} \frac{sin(x)cos(h) + cos(x)sin(h) - sin(x)}{h}
+\end{equation*} \\
+\begin{equation*} = \lim\limits_{h\xrightarrow[]{} 0} \frac{-sin(x)(1 - cos(h))}{h} + cos(x) \lim\limits_{h\xrightarrow[]{} 0} \frac{sin(h)}{h}, \ (\lim\limits_{h\xrightarrow[]{} 0} \frac{sin(h)}{h} = 1) \implies f'(x) = \lim\limits_{h\xrightarrow[]{} 0} \frac{-sin(x)(1 - cos(h))}{h} + cos(x)
+\end{equation*} \\
+\begin{equation*} (1 - cos(x)) = 2sin^2 (x/2) \implies f'(x) = \lim\limits_{h\xrightarrow[]{} 0} \frac{-sin(x)(2sin^2 (h/2))}{h} = \lim\limits_{h\xrightarrow[]{} 0} \frac{sin(h/2)}{h/2} . \lim\limits_{h\xrightarrow[]{} 0} -sin(x).sin(h/2) + cos(x)
+\end{equation*} \\
+\begin{equation*} = -sin(x)sin(0) + cos(x) = cos(x), \ hence \ proved.
+\end{equation*}
+
+
 \item (4 points) Calculate the equation of a tangent line given by a function $f(x) = x^4 + 5x^3+9x^2-3$ and report the result at $x=1$ and $y = 12$. \textbf{Hint:} Calculate slope of function and employ point slope form of a line to get the tangent equation.
 
 \item (4 points) Consider a function $f(x) = e^{2x}$ and a function $g(x) = \frac{x^2}{x-1}$. Let $F(x) = f(g(x))$, find an expression for $F'(x)$. \textbf{Hint:} Employ chain rule. Answer does not need to be simplified after FULL application of derivatives (the point is to test your application of derivatives not your algebra). Please enumerate the derivative rules you have employed.
