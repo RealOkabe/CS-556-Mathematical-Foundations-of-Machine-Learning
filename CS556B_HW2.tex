@@ -79,8 +79,8 @@ Note: All solutions methods must be fully explained. If a problem requires you t
     $\mathbf{ For \ \lambda = 5, \begin{bmatrix} 1 - 5 & 2 \\ 4 & 3 - 5 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0 \implies v_1 = 1 \ and \ v_2 = 2 }$ \\
     $\mathbf{ For \ \lambda = -1, \begin{bmatrix} 1 + 1 & 2 \\ 4 & 3 + 1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = 0 \implies v_1 = -1 \ and \ v_2 = 1 }$ \\
     $\mathbf{ \implies \bigvee = \begin{bmatrix} 1 & -1 \\ 2 & 1 \end{bmatrix} \implies \bigvee^{-1} = \begin{bmatrix} 1/3 & 1/3 \\ -2/3 & 1/3 \end{bmatrix}}$ \\
-    $\mathbf{ A = \bigvee \bigwedge \bigvee^{-1} = \begin{bmatrix} 1 & -1 \\ -2 & 1 \end{bmatrix} \begin{bmatrix} 5 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 1/3 & 1/3 \\ -2/3 & 1/3 \end{bmatrix} }$ \\
-    $\mathbf{ \begin{bmatrix} 5 & 1 \\ -10 & -1 \end{bmatrix} \begin{bmatrix} 1/3 & 1/3 \\ -2/3 & 1/3 \end{bmatrix} = \begin{bmatrix} 1 & 2 \\ -8/3 & -11/3 \end{bmatrix} }$
+    $\mathbf{ A = \bigvee \bigwedge \bigvee^{-1} = \begin{bmatrix} 1 & -1 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} 5 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} 1/3 & 1/3 \\ -2/3 & 1/3 \end{bmatrix} }$ \\
+    $\mathbf{ \begin{bmatrix} 5 & 1 \\ 10 & -1 \end{bmatrix} \begin{bmatrix} 1/3 & 1/3 \\ -2/3 & 1/3 \end{bmatrix} = \begin{bmatrix} 1 & 2 \\ 4 &  3 \end{bmatrix} }$
     
     \item (5 points) Calculate the Singular Value Decomposition of matrix
     $A = \begin{bmatrix}
@@ -131,6 +131,12 @@ Note: All solutions methods must be fully explained. If a problem requires you t
         
         `$<$lastname$>$\_$<$firstname$>$\_svd.ipynb'. All visualizations and answers should be printed in the notebook (in addition to including only the answers in the assignment for this question).
     \end{enumerate}
+
+    Answer: a) 1.4999999898595036 \\
+    b) 13.266399703684902 \\
+    c) 2.416666650522624 \\
+    d) Casablanca \\
+    e) Check file $agrawal\_anmol\_svd.ipynb$
     
     \item (7 points) Calculate the principle component analysis of the \href{https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html}{Iris} dataset using the \href{https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html}{built-in method from Scikit-learn} and showcase the following.
     \begin{enumerate}
@@ -142,6 +148,8 @@ Note: All solutions methods must be fully explained. If a problem requires you t
         
         `$<$lastname$>$\_$<$firstname$>$\_pca.ipynb'. All visualizations and answers should be printed in the notebook (in addition to including only the answers in the assignment for this question)
     \end{enumerate}
+
+    Answer: Check file $agrawal\_anmol\_pca.ipynb$
 \end{enumerate}
 
 \section*{Probability (50 points)}
@@ -280,7 +288,7 @@ Answer: \begin{equation*}a) \ F(x) = \frac{f(x)}{g(x)} \implies F'(x) = \lim\lim
 
 \begin{equation*} Answer: \ a) \ \frac{\delta}{\delta x} F(x, y) = \frac{e^x(3x^2y^2 - 4x) - e^x(x^3y^2 - 2x^2 + 5y)}{e^{2x}}, \ \frac{\delta}{\delta y} F(x, y) = \frac{2x^3y + 5}{e^x}
 \end{equation*} \\
-\begin{equation*} b) \ \frac{\delta}{\delta x} F(x, y, z) = \frac{y^2}{x + 2y} - ln(3z)(2x^2), \ \frac{\delta}{\delta y} F(x, y, z) = 2y \ ln(x + 2y) + \frac{2y^2}{x + 2y} - ln(3z)(2y), \ \frac{\delta}{\delta z} F(x, y, z) = \frac{4}{3} + 4ln (3z)
+\begin{equation*} b) \ \frac{\delta}{\delta x} F = \frac{y^2}{x + 2y} - ln(3z)(2x^2), \ \frac{\delta}{\delta y} F = 2y \ ln(x + 2y) + \frac{2y^2}{x + 2y} - ln(3z)(2y), \ \frac{\delta}{\delta z} F = \frac{-x^3}{z} - \frac{y^2}{z} + 4ln(3z) + 4
 \end{equation*}
 
 
@@ -301,6 +309,15 @@ Answer: \begin{equation*}a) \ F(x) = \frac{f(x)}{g(x)} \implies F'(x) = \lim\lim
     \item (1 point) Calculate the slope of rainfall depth at hour 15 using forward numerical differentiation.
     \item (1 point) Calculate the slope of rainfall depth at hour 15 using backward numerical differentiation.
     \end{enumerate}
+
+    \begin{equation*} Answer: \ a) \ h = 2.5, \ f'(12.5) = \frac{f(12.5 + 2.5) - f(12.5 - 2.5)}{2 * 2.5} = \frac{370 - 300}{5} = \frac{70}{5} = 14
+    \end{equation*} \\
+    \begin{equation*} f'(22.5) = \frac{f(22.5 + 2.5) - f(22.5 - 2.5)}{5} = \frac{f(25) - f(20)}{5} = \frac{400 - 325}{5} = \frac{75}{5} = 15
+    \end{equation*} \\
+    \begin{equation*} b) \ h = 5, \ f'(15) = \frac{f(15 + 5) - f(15)}{5} = \frac{f(20) - f(15)}{5} = \frac{325 - 370}{5} = \frac{-45}{5} = -9
+    \end{equation*} \\
+    \begin{equation*} c) \ h = 5, \ f'(15) = \frac{f(15) - f(15 - 5)}{5} = \frac{f(15) - f(10)}{5} = \frac{370 - 300}{5} = \frac{70}{5} = 14
+    \end{equation*}
 \end{enumerate}
 
 \end{document}
